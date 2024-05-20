@@ -1,9 +1,9 @@
-from raga_llm_hub.metrics.retrieval.f1_at_k import F1ScoreAtK
-from raga_llm_hub.metrics.retrieval.f1_score import F1Score
-from raga_llm_hub.metrics.retrieval.precision import Precision
-from raga_llm_hub.metrics.retrieval.precision_at_k import PrecisionAtK
-from raga_llm_hub.metrics.retrieval.recall import Recall
-from raga_llm_hub.metrics.retrieval.recall_at_k import RecallAtK
+from ..metrics.retrieval.f1_at_k import F1ScoreAtK
+from ..metrics.retrieval.f1_score import F1Score
+from ..metrics.retrieval.precision import Precision
+from ..metrics.retrieval.precision_at_k import PrecisionAtK
+from ..metrics.retrieval.recall import Recall
+from ..metrics.retrieval.recall_at_k import RecallAtK
 
 metric_classes = {
     "Precision": Precision,

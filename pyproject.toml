@@ -1,10 +1,10 @@
 [project]
 name = "raga-llm-hub"
-version = "1.0.0.10"
+version = "1.0.0.11.alpha.1"
 authors = [{ name = "Raga AI", email = "rehan.asif@raga.ai" }]
 description = "Package for LLM Evaluation"
 readme = "README.md"
-keywords = ["ragaai", "raga", "llm", "testing", "llm-eval", "llm-hub"]
+keywords = ["ragaai", "raga", "llm", "testing", "llm-eval", "llm-hub", "rag-builder"]
 license = { file = "LICENSE" }
 
 classifiers = [
@@ -21,37 +21,52 @@ classifiers = [
 requires-python = ">=3.8"
 
 dependencies = [
-    "prettytable==3.9.0",
-    "toml==0.10.2",
-    "datasets==2.16.1",
-    "vaderSentiment==3.3.2",
-    "llama_index==0.9.48",
-    "nltk==3.8.1",
-    "tensorflow",
-    "sentence_transformers==2.4.0",
-    "textstat==0.7.3",
-    "ir_measures==0.3.3",
-    "optimum==1.17.1",
-    "spacy==3.7.4",
-    "presidio-analyzer==2.2.353",
-    "presidio-anonymizer==2.2.353",
-    "detect-secrets==1.4.0",
-    "span-marker==1.5.0",
-    "promptinject==0.1.1.1",
-    "rapidfuzz==3.6.1",
-    "langchain==0.1.9",
-    "openai==1.11.1",
-    "transformers==4.38.1",
-    "Faker==23.2.1",
-    "structlog==24.1.0",
-    "json-repair==0.9.0",
-    "fuzzysearch==0.7.3",
-    "waitress==3.0.0",
-    "sqlvalidator==0.0.20"
+    "prettytable~=3.9.0",
+    "toml~=0.10.2",
+    "datasets~=2.16.1",
+    "vaderSentiment~=3.3.2",
+    "llama_index~=0.9.48",
+    "nltk~=3.8.1",
+    "tensorflow~=2.15",
+    "sentence_transformers~=2.4.0",
+    "textstat~=0.7.3",
+    "ir_measures~=0.3.3",
+    "optimum~=1.17.1",
+    "spacy~=3.7.4",
+    "presidio-analyzer~=2.2.353",
+    "presidio-anonymizer~=2.2.353",
+    "detect-secrets~=1.4.0",
+    "span-marker~=1.5.0",
+    "promptinject~=0.1.1.1",
+    "rapidfuzz~=3.6.1",
+    "langchain~=0.1.9",
+    "openai~=1.11.1",
+    "transformers~=4.38.1",
+    "Faker~=23.2.1",
+    "structlog~=24.1.0",
+    "json-repair~=0.9.0",
+    "fuzzysearch~=0.7.3",
+    "waitress~=3.0.0",
+    "sqlvalidator~=0.0.20",
+    "Flask~=3.0.2",
+    "langchain-community~=0.0.29",
+    "langchain-openai~=0.0.5",
+    "langchain-text-splitters~=0.0.1",
+    "langchain-chroma~=0.1.0",
+    "litellm~=1.35.8",
+    "unstructured~=0.12",
+    "docx2txt~=0.8",
+    "pypdf~=4.0",
+    "ragatouille~=0.0.8",
+    "flask-ngrok3~=0.3.1",
+    "pymongo~=4.7.2",
+    "langchain_mongodb~=0.1.5",
+    "tf-keras~=2.16.0",
+    "langchain_experimental~=0.0.58",
+    "langchain_postgres~=0.0.4"
 ]
 
 [project.optional-dependencies]
-ui = ["Flask==3.0.2"]
 onnxruntime = []
 onnxruntime-gpu = []
 docs-dev = [
@@ -86,17 +101,17 @@ build-backend = "setuptools.build_meta"
 include-package-data = true
 
 [tool.setuptools.package-data]
-"*" = ["src/raga_llm_hub/tests/test_details.toml",
-       "src/raga_llm_hub/utils/data_files/profanity_en.csv",
-       "src/raga_llm_hub/utils/data_files/ldnoobw-en.txt",
-       "src/raga_llm_hub/utils/data_files/ofcom-potentially-offensive.txt",
-       "src/raga_llm_hub/utils/data_files/inthewild_jailbreak_llms.txt",
-       "src/raga_llm_hub/ui/templates/*.html",
-       "src/raga_llm_hub/ui/templates/components/*.html",
-       "src/raga_llm_hub/ui/static/*.png",
-       "src/raga_llm_hub/ui/static/*.js",
-       "src/raga_llm_hub/ui/static/*.css",
-       "src/raga_llm_hub/guardrails/resources/sensitive_patterns.json"
+"*" = ["src/raga_llm_hub/llm_eval/tests/test_details.toml",
+       "src/raga_llm_hub/llm_eval/utils/data_files/profanity_en.csv",
+       "src/raga_llm_hub/llm_eval/utils/data_files/ldnoobw-en.txt",
+       "src/raga_llm_hub/llm_eval/utils/data_files/ofcom-potentially-offensive.txt",
+       "src/raga_llm_hub/llm_eval/utils/data_files/inthewild_jailbreak_llms.txt",
+       "src/raga_llm_hub/llm_eval/ui/templates/*.html",
+       "src/raga_llm_hub/llm_eval/ui/templates/components/*.html",
+       "src/raga_llm_hub/llm_eval/ui/static/*.png",
+       "src/raga_llm_hub/llm_eval/ui/static/*.js",
+       "src/raga_llm_hub/llm_eval/ui/static/*.css",
+       "src/raga_llm_hub/llm_eval/guardrails/resources/sensitive_patterns.json"
     ]
 
 [tool.setuptools.packages.find]

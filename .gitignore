@@ -12,6 +12,7 @@ src/5.test_vulnerability_scanner.py
 src/6.v1_tests.py
 src/7. ui_testing.py
 src/8.ui_testing.ipynb
+src/9.rag_testing.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

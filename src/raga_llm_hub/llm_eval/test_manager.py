@@ -43,7 +43,7 @@ class TestManager:
         """
         Load supported tests from the test details TOML file and return the supported tests.
         """
-        data = pkgutil.get_data("raga_llm_hub", "tests/test_details.toml")
+        data = pkgutil.get_data("raga_llm_hub", "llm_eval/tests/test_details.toml")
         if data is not None:  # Check if data was successfully loaded
             data_str = data.decode("utf-8")  # Decode bytes to string
             self._supported_tests = toml.loads(data_str)

@@ -14,13 +14,13 @@ from transformers import (
 
 from .matcher import Matcher
 
-# refusal_sample_path = pkgutil.get_data("raga_llm_hub", "resources/profanity_en.csv")
-
 
 surge_list = defaultdict(list)
-csvfile = pkgutil.get_data("raga_llm_hub", "utils/data_files/profanity_en.csv")
+csvfile = pkgutil.get_data("raga_llm_hub", "llm_eval/utils/data_files/profanity_en.csv")
+
 csv_file = io.BytesIO(csvfile)
 csv_data = pd.read_csv(csv_file)
+
 for index, row in csv_data.iterrows():
     surge_list[row["category_1"]].append(row["text"])
     if not pd.isnull(row["category_2"]):
@@ -32,7 +32,7 @@ for index, row in csv_data.iterrows():
 min_ofcom_strength = 2
 ofcom_list = defaultdict(list)
 csvfile = pkgutil.get_data(
-    "raga_llm_hub", "utils/data_files/ofcom-potentially-offensive.txt"
+    "raga_llm_hub", "llm_eval/utils/data_files/ofcom-potentially-offensive.txt"
 )
 csv_file = io.StringIO(csvfile.decode("utf-8"))
 reader = csv.DictReader(csv_file, delimiter="\t")

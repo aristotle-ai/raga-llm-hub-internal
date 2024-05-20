@@ -1,26 +1,10 @@
-"""
-Main Module for LLM Test Execution
-"""
+from .llm_eval import RagaLLMEval
+from .rag_builder import RAGBuilder as RagaRAGBuilder
+
 
 import requests
 
-from .observer.raga_observer import raga_observer
-from .raga_llm_eval import RagaLLMEval
-from .raga_llm_observer import RagaLLMObserver
-from .tests.test_data import get_data
-from .tests.test_executor import TestExecutor
-from .ui.app import launch_app
-
-__all__ = [
-    "RagaLLMEval",
-    "RagaLLMObserver",
-    "TestExecutor",
-    "get_data",
-    "raga_observer",
-    "launch_app",
-]
-
-__version__ = "1.0.0.10"
+__version__ = "1.0.0.11.alpha.1"
 
 
 def check_latest_version(package_name):
@@ -44,3 +28,8 @@ def check_latest_version(package_name):
 
 # Check the latest version
 check_latest_version("raga_llm_hub")
+
+__all__ = [
+    "RagaLLMEval",
+    "RagaRAGBuilder",
+]
